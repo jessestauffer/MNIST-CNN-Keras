@@ -50,4 +50,5 @@ model.add(Dropout(0.5))
 model.add(Dense(10, activation='softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+#model.fit(X_train, Y_train, batch_size=32, epochs=10, verbose=1)
 model.fit_generator(generator(X_train, Y_train, 32), steps_per_epoch=X_train.shape[0] / 32, epochs=10, verbose=1)
